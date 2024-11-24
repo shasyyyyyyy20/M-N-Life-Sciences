@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT M&N LifeSciences</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+        
+    <style>
+        /* Warna-warna utama */
+        .bg-primary-custom { background-color: hsl(211, 41%, 61%); } /* Biru */
+        .bg-secondary-custom { background-color: hsl(45, 55%, 75%); } /* Kuning */
+        .bg-success-custom { background-color: #87c496; } /* Hijau */
+        .bg-danger-custom { background-color: hsl(354, 32%, 58%); } /* Merah */
+
+        /* Penyesuaian footer */
+        footer {
+            background-color: #343A40;
+            color: white;
+            padding: 60px;
+            text-align: center; 
+            font-family: 'Lora', serif;
+        }
+
+        /* Penyesuaian warna dan padding di konten utama */
+        .content-section {
+            padding: 60px 0;
+            margin: 0;
+            padding: 0;
+            font-family: 'Lora', serif;
+        }
+
+        .product-card {
+            margin-bottom: 30px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar Section -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a href="huruhara.html" class="navbar-brand">PT M&N LifeSciences</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="huruhara.html" class="nav-link active">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">Tentang Kami</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#products" class="nav-link">Produk</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Kontak</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<style>
+/* Navbar Styles */
+.navbar {
+    background: linear-gradient(135deg, #1a5f7a, #86bc25);
+    padding: 1rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: white !important;
+    margin: 0 10px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.section-title {
+    color: #1a5f7a;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.contact-info {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.info-item {
+    margin-bottom: 25px;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-item h3 {
+    color: #1a5f7a;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-control {
+    border: 1px solid #ddd;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.form-control:focus {
+    border-color: #86bc25;
+    box-shadow: 0 0 0 0.2rem rgba(134, 188, 37, 0.25);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #1a5f7a, #86bc25);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Offset for fixed navbar */
+#contact {
+    padding-top: 100px;
+    margin-top: -100px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+    
+    .contact-section {
+        padding: 60px 0;
+    }
+    
+    .contact-info {
+        margin-bottom: 30px;
+    }
+}
+</style>
+
+<!-- Required Scripts -->
+<script>
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Form submission handling
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Add your form submission logic here
+    alert('Pesan Anda telah terkirim!');
+    this.reset();
+});
+
+// Active link handling
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+</script>
+
+<!-- Header Section with Image Slider -->
+<header>
+    <div id="headerCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="apoteker.png" class="d-block w-100" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+                <img src="2.png" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+                <img src="3.png" class="d-block w-100" alt="Slide 3">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#headerCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#headerCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</header>
+<div class="bg-secondary-custom text-center text-white p-5 text-bold">
+    <div class="container">
+        <h1>Selamat Datang di PT M&N LifeSciences</h1>
+        <p class="lead">Inovasi Kesehatan untuk Masa Depan yang Lebih Baik</p>
+    </div>
+</div>
+
+<section id="about" class="section about-section">
+    <div class="container">
+        <div class="about-header">
+            <h1 class="section-title">Tentang Kami</h1>
+            <p class="subtitle">Mendedikasikan 30 tahun untuk inovasi kesehatan dan kehidupan yang lebih baik</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="year">1994</div>
+                    <h3>Awal Perjalanan</h3>
+                    <p>Melinda dan Nathasya mendirikan M&N Group dengan visi menciptakan perubahan dalam dunia farmasi.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="year">2000</div>
+                    <h3>Ekspansi Produksi</h3>
+                    <p>Memulai produksi sediaan steril dan mengembangkan lini produk antibiotik beta laktam.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="year">2010</div>
+                    <h3>Inovasi Berkelanjutan</h3>
+                    <p>Mengembangkan fokus pada produk vitamin anak dan memperkuat komitmen terhadap keberlanjutan.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="year">2024</div>
+                    <h3>30 Tahun Dedikasi</h3>
+                    <p>Memperkuat posisi sebagai pemimpin dalam industri life sciences dengan teknologi modern.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">🔬</div>
+                <h3>Inovasi</h3>
+                <p>Terus mengembangkan solusi kesehatan yang inovatif untuk kehidupan yang lebih baik.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">⭐</div>
+                <h3>Kualitas</h3>
+                <p>Berkomitmen pada standar kualitas tertinggi dalam setiap produk yang kami hasilkan.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🌱</div>
+                <h3>Keberlanjutan</h3>
+                <p>Menjaga keseimbangan antara kemajuan bisnis dan tanggung jawab lingkungan.</p>
+            </div>
+        </div>
+    </div>
+    <div class="button-container">
+        <a href="tentang kami.html" class="btn btn-light">Lebih Lanjut</a>
+    </div>
+    <style>
+        /* Styling untuk container button */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        /* Styling untuk button */
+        .btn-light {
+            background: white;
+            color: #1a5f7a;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 500;
+            border: 2px solid #1a5f7a;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .btn-light:hover {
+            background: #1a5f7a;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        </style>
+</section>
+
+<style>
+.about-section {
+    padding: 80px 20px;
+    background: #f9fafb;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.about-header h1 {
+    color: #1a5f7a;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1.2em;
+}
+
+.timeline {
+    position: relative;
+    margin: 50px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: #86bc25;
+}
+
+.timeline-item {
+    margin-bottom: 50px;
+    position: relative;
+    width: 50%;
+    padding: 0 40px;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-content {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #86bc25;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+    right: -48px;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+    left: -48px;
+}
+
+.year {
+    color: #1a5f7a;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.value-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.value-card h3 {
+    color: #1a5f7a;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 60px;
+    }
+
+    .timeline-content::before {
+        left: -40px !important;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</div>
+
+<!-- Katalog Produk Section -->
+<section id="products" class="section products-section">
+    <div class="container">
+        <h2 class="section-title">Produk Unggulan</h2>
+        <h4 class="product-category">Multivitamin</h4>
+        <div id="multivitaminCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#multivitaminCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#multivitaminCarousel" data-slide-to="1"></li>
+                <li data-target="#multivitaminCarousel" data-slide-to="2"></li>
+            </ol>
+    
+            <!-- Carousel Items -->
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="growzy.jpg" class="card-img-top" alt="Growzy">
+                                <div class="card-body">
+                                    <h5 class="card-title">Growzy</h5>
+                                    <p class="card-text">Tablet hisap untuk anak dengan kandungan multivitamin</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="imunafit.jpg" class="card-img-top" alt="Imunafit">
+                                <div class="card-body">
+                                    <h5 class="card-title">Imunafit</h5>
+                                    <p class="card-text">Sirup dengan kandungan multivitamin yang baik untuk pertumbuhan anak.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="vitaciz.jpg" class="card-img-top" alt="Vitaciz">
+                                <div class="card-body">
+                                    <h5 class="card-title">Vitaciz</h5>
+                                    <p class="card-text">Multivitamin dengan kandungan Vitamin C yang tinggi mampu memenuhi kebutuhan vitamin C anak dalam 1 hari.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="vitamin d3.jpg" class="card-img-top" alt="Vitamin D3 1000 IU">
+                                <div class="card-body">
+                                    <h5 class="card-title">Vitamin D3 1000 IU</h5>
+                                    <p class="card-text">Tablet vitamin D3 dengan kandungan D3 yang tinggi baik untuk imunitas tubuh.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="Render_Mockup_4000_4000_2024-11-24.jpg" class="card-img-top" alt="Vitamin C">
+                                <div class="card-body">
+                                    <h5 class="card-title">Vitamin C</h5>
+                                    <p class="card-text">Tablet hisap vitamin C yang mampu memperkuat imunitas tubuh.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="botolvitc.png" class="card-img-top" alt="Vitacy Power">
+                                <div class="card-body">
+                                    <h5 class="card-title">Vitacy Power</h5>
+                                    <p class="card-text">Multivitamin yang dilengkapi dengan kandungan Zinc sehingga sangat efektif dalam menjaga imunitas tubuh.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            <!-- Carousel Controls -->
+            <a class="carousel-control-prev" href="#multivitaminCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#multivitaminCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <h4 class="product-category mt-5">Obat</h4>
+        <div id="obatCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#obatCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#obatCarousel" data-slide-to="1"></li>
+                <li data-target="#obatCarousel" data-slide-to="2"></li>
+            </ol>
+    
+            <!-- Carousel Items -->
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                        <img src="ambrox.jpg" class="card-img-top" alt="Mucosal">
+                        <div class="card-body">
+                            <h5 class="card-title">Mucosal</h5>
+                            <p class="card-text">Mucosal sirup mengandung Ambroxol HCl yang merupakan mukolitik (pengencer dahak) yang efektif untuk mengatasi batuk berdahak. Sirup ini membantu mengencerkan dan memudahkan pengeluaran dahak sehingga meredakan batuk produktif.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                 <div class="card">
+                     <img src="amox.jpg" class="card-img-top" alt="Amoxicilin 250 mg">
+                     <div class="card-body">
+                         <h5 class="card-title">Amoxicilin 250 mg</h5>
+                         <p class="card-text">Sirup Amoksisilin generik merupakan antibiotik yang termasuk dalam golongan penisilin dengan spektrum luas yang efektif melawan berbagai jenis bakteri gram positif dan gram negatif. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="azit.jpg" class="card-img-top" alt="Azithromycin">
+                        <div class="card-body">
+                            <h5 class="card-title">Azithromycin</h5>
+                            <p class="card-text">Sirup Azithromycin diindikasikan untuk mengatasi berbagai infeksi yang disebabkan oleh bakteri yang sensitif terhadap Azithromycin, termasuk infeksi saluran pernapasan atas (seperti faringitis dan tonsilitis), infeksi saluran pernapasan bawah (seperti bronkitis dan pneumonia), serta infeksi kulit dan jaringan lunak.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="cefix.jpg" class="card-img-top" alt="Ceforal">
+                        <div class="card-body">
+                            <h5 class="card-title">Ceforal</h5>
+                            <p class="card-text">Ceforal bekerja dengan efektif dalam mengatasi infeksi saluran pernapasan atas dan bawah, infeksi saluran kemih, serta infeksi kulit dan jaringan lunak yang disebabkan oleh bakteri yang sensitif terhadap Cefixime.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="ceti.jpg" class="card-img-top" alt="Zirial">
+                        <div class="card-body">
+                            <h5 class="card-title">Zirial</h5>
+                            <p class="card-text">Zirial diindikasikan untuk meredakan gejala rinitis alergi baik yang bersifat musiman maupun sepanjang tahun, seperti bersin-bersin, hidung tersumbat, hidung berair, serta mata berair dan gatal.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="ctm.jpg" class="card-img-top" alt="Chlorpheniramine Maleate">
+                        <div class="card-body">
+                            <h5 class="card-title">Chlorpheniramine Maleate</h5>
+                            <p class="card-text">CTM (Chlorpheniramine Maleate) sirup generik adalah obat antihistamin yang digunakan untuk meredakan gejala alergi seperti bersin-bersin, hidung berair, dan gatal-gatal.</p>
+                        </div>
+                    </div>
+                </div>
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="dextro.jpg" class="card-img-top" alt="Dextromethorphan">
+                        <div class="card-body">
+                            <h5 class="card-title">Dextromethorphan</h5>
+                            <p class="card-text">Dextromethorphan sirup merupakan obat batuk golongan generik dengan kandungan Dextromethorphan HBr 15 mg/5mL yang digunakan untuk meredakan batuk kering atau batuk yang tidak berdahak.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="dompe.jpg" class="card-img-top" alt="Motilone">
+                        <div class="card-body">
+                            <h5 class="card-title">Motilone</h5>
+                            <p class="card-text">Motilone merupakan sediaan sirup yang mengandung zat aktif Domperidone 5mg/5ml. Sirup ini digunakan untuk mengatasi mual dan muntah, serta gangguan motilitas saluran cerna.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="feven.jpg" class="card-img-top" alt="Fevenpro">
+                        <div class="card-body">
+                            <h5 class="card-title">Fevenpro</h5>
+                            <p class="card-text">Fevenpro merupakan sediaan sirup yang mengandung bahan aktif Ibuprofen 100 mg/5 mL, termasuk dalam golongan obat NSAID (Non-Steroid Anti-Inflammatory Drug) yang digunakan untuk meredakan demam dan nyeri ringan hingga sedang pada anak-anak.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                 <!-- Slide 4 -->
+        <div class="carousel-item active">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="hydro.jpg" class="card-img-top" alt="Calmoryl">
+                        <div class="card-body">
+                            <h5 class="card-title">Calmoryl</h5>
+                            <p class="card-text">Calmoryl merupakan sirup yang mengandung zat aktif Hydroxyzine HCl, termasuk dalam golongan antihistamin yang digunakan untuk meredakan gejala alergi seperti gatal, ruam kulit, rhinitis alergi, dan urtikaria.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="loratadine fix.jpg" class="card-img-top" alt="Cloratane">
+                        <div class="card-body">
+                            <h5 class="card-title">Cloratane</h5>
+                            <p class="card-text"> Cloratane diindikasikan untuk meredakan gejala alergi seperti bersin-bersin, hidung berair, mata berair dan gatal, serta gatal-gatal pada kulit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="parasol fix.jpg" class="card-img-top" alt="Parasol Sirup">
+                        <div class="card-body">
+                            <h5 class="card-title">Parasol Sirup</h5>
+                            <p class="card-text">Parasol sirup mengandung Paracetamol 120mg/5ml, merupakan obat analgesik dan antipiretik untuk mengatasi demam dan nyeri ringan hingga sedang pada anak-anak.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="carousel-item">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="ranit.jpg" class="card-img-top" alt="Ranitrol">
+                        <div class="card-body">
+                            <h5 class="card-title">Ranitrol</h5>
+                            <p class="card-text">Ranitrol diindikasikan untuk mengatasi dan mencegah gejala sakit maag (dispepsia), tukak lambung, dan penyakit refluks asam lambung (GERD).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="salbu.jpg" class="card-img-top" alt="Salvion">
+                        <div class="card-body">
+                            <h5 class="card-title">Salvion</h5>
+                            <p class="card-text">Sirup ini diindikasikan untuk meredakan dan mencegah gejala bronkospasme pada pasien asma bronkial serta penyakit paru obstruktif kronik (PPOK).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="ibuprofen.jpg" class="card-img-top" alt="Ibuprofen">
+                        <div class="card-body">
+                            <h5 class="card-title">Ibuprofen</h5>
+                            <p class="card-text">Deskripsi singkat produk 6.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="amoxicilin.jpg" class="card-img-top" alt="Amoxicilin">
+                        <div class="card-body">
+                            <h5 class="card-title">Amoxicilin</h5>
+                            <p class="card-text">Antibiotik untuk infeksi bakteri spektrum luas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="antalgin.jpg" class="card-img-top" alt="Antalgin">
+                        <div class="card-body">
+                            <h5 class="card-title">Antalgin</h5>
+                            <p class="card-text">Pereda nyeri dan penurun demam</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="antasida.jpg" class="card-img-top" alt="Antasida">
+                        <div class="card-body">
+                            <h5 class="card-title">Antasida</h5>
+                            <p class="card-text">Meredakan gejala maag dan keasaman lambung</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- Slide 6 -->
+        <div class="carousel-item">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="asterlix.jpg" class="card-img-top" alt="Asterlix">
+                        <div class="card-body">
+                            <h5 class="card-title">Asterlix</h5>
+                            <p class="card-text">Antihistamin untuk gejala alergi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="atorvas.jpg" class="card-img-top" alt="Atorvas">
+                        <div class="card-body">
+                            <h5 class="card-title">Atorvas</h5>
+                            <p class="card-text">Pengontrol kolesterol dalam darah</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="breathosal.jpg" class="card-img-top" alt="Breathosal">
+                        <div class="card-body">
+                            <h5 class="card-title">Breathosal</h5>
+                            <p class="card-text">Terapi untuk gangguan pernapasan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- Slide 7 -->
+        <div class="carousel-item">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="antasida doen.jpg" class="card-img-top" alt="Antasida doen">
+                        <div class="card-body">
+                            <h5 class="card-title">Antasida doen</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="cetirizine.jpg" class="card-img-top" alt="Cetirizine">
+                        <div class="card-body">
+                            <h5 class="card-title">Cetirizine</h5>
+                            <p class="card-text">Antihistamin non-drowsy untuk alergi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="ciprofloxacin.jpg" class="card-img-top" alt="Ciprofloxacin">
+                        <div class="card-body">
+                            <h5 class="card-title">Ciprofloxacin</h5>
+                            <p class="card-text">Antibiotik fluorokuinolon spektrum luas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="carousel-item">
+         <div class="row">
+             <div class="col-md-4">
+                 <div class="card">
+                     <img src="cefadroxil.jpg" class="card-img-top" alt="Cefadroxil">
+                     <div class="card-body">
+                         <h5 class="card-title">Cefadroxil</h5>
+                         <p class="card-text">Antibiotik sefalosporin generasi pertama</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="card">
+                     <img src="cetirizine.jpg" class="card-img-top" alt="Cetirizine">
+                     <div class="card-body">
+                         <h5 class="card-title">Cetirizine</h5>
+                         <p class="card-text">Antihistamin non-drowsy untuk alergi</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="card">
+                     <img src="ciprofloxacin.jpg" class="card-img-top" alt="Ciprofloxacin">
+                     <div class="card-body">
+                         <h5 class="card-title">Ciprofloxacin</h5>
+                         <p class="card-text">Antibiotik fluorokuinolon spektrum luas</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- Slide 5 -->
+     <div class="carousel-item">
+         <div class="row">
+             <div class="col-md-4">
+                 <div class="card">
+                     <img src="cefadroxil.jpg" class="card-img-top" alt="Cefadroxil">
+                     <div class="card-body">
+                         <h5 class="card-title">Cefadroxil</h5>
+                         <p class="card-text">Antibiotik sefalosporin generasi pertama</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="card">
+                     <img src="cetirizine.jpg" class="card-img-top" alt="Cetirizine">
+                     <div class="card-body">
+                         <h5 class="card-title">Cetirizine</h5>
+                         <p class="card-text">Antihistamin non-drowsy untuk alergi</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="card">
+                     <img src="ciprofloxacin.jpg" class="card-img-top" alt="Ciprofloxacin">
+                     <div class="card-body">
+                         <h5 class="card-title">Ciprofloxacin</h5>
+                         <p class="card-text">Antibiotik fluorokuinolon spektrum luas</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- Slide 6 -->
+     <div class="carousel-item">
+         <div class="row">
+             <div class="col-md-4">
+                 <div class="card">
+                     <img src="cefadroxil.jpg" class="card-img-top" alt="Cefadroxil">
+                     <div class="card-body">
+                         <h5 class="card-title">Cefadroxil</h5>
+                         <p class="card-text">Antibiotik sefalosporin generasi pertama</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="card">
+                     <img src="cetirizine.jpg" class="card-img-top" alt="Cetirizine">
+                     <div class="card-body">
+                         <h5 class="card-title">Cetirizine</h5>
+                         <p class="card-text">Antihistamin non-drowsy untuk alergi</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="card">
+                     <img src="ciprofloxacin.jpg" class="card-img-top" alt="Ciprofloxacin">
+                     <div class="card-body">
+                         <h5 class="card-title">Ciprofloxacin</h5>
+                         <p class="card-text">Antibiotik fluorokuinolon spektrum luas</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- Slide 7 -->
+     <div class="carousel-item">
+         <div class="row">
+             <div class="col-md-4">
+                 <div class="card">
+                     <img src="cefadroxil.jpg" class="card-img-top" alt="Cefadroxil">
+                     <div class="card-body">
+                         <h5 class="card-title">Cefadroxil</h5>
+                         <p class="card-text">Antibiotik sefalosporin generasi pertama</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="card">
+                     <img src="cetirizine.jpg" class="card-img-top" alt="Cetirizine">
+                     <div class="card-body">
+                         <h5 class="card-title">Cetirizine</h5>
+                         <p class="card-text">Antihistamin non-drowsy untuk alergi</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="card">
+                     <img src="ciprofloxacin.jpg" class="card-img-top" alt="Ciprofloxacin">
+                     <div class="card-body">
+                         <h5 class="card-title">Ciprofloxacin</h5>
+                         <p class="card-text">Antibiotik fluorokuinolon spektrum luas</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- Slide 8 -->
+     <div class="carousel-item">
+         <div class="row">
+             <div class="col-md-4">
+                 <div class="card">
+                     <img src="cefadroxil.jpg" class="card-img-top" alt="Cefadroxil">
+                     <div class="card-body">
+                         <h5 class="card-title">Cefadroxil</h5>
+                         <p class="card-text">Antibiotik sefalosporin generasi pertama</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="card">
+                     <img src="cetirizine.jpg" class="card-img-top" alt="Cetirizine">
+                     <div class="card-body">
+                         <h5 class="card-title">Cetirizine</h5>
+                         <p class="card-text">Antihistamin non-drowsy untuk alergi</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="card">
+                     <img src="ciprofloxacin.jpg" class="card-img-top" alt="Ciprofloxacin">
+                     <div class="card-body">
+                         <h5 class="card-title">Ciprofloxacin</h5>
+                         <p class="card-text">Antibiotik fluorokuinolon spektrum luas</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ 
+        <a class="carousel-control-prev" href="#sirupCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#sirupCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+<style>
+.card {
+   margin: 0 10px;
+   height: 100%;
+   border: none;
+   border-radius: 15px;
+   overflow: hidden;
+   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+   transition: transform 0.3s ease;
+}
+
+.card:hover {
+   transform: translateY(-5px);
+}
+
+.card-img-top {
+   height: 250px;
+   object-fit: contain;
+   padding: 15px;
+   background: white;
+}
+
+.card-body {
+   padding: 20px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+   width: 40px;
+   height: 40px;
+   background: #1a5f7a;
+   border-radius: 50%;
+   opacity: 0.8;
+   top: 50%;
+   transform: translateY(-50%);
+}
+
+.carousel-indicators {
+   bottom: -50px;
+}
+
+.carousel-indicators li {
+   background-color: #1a5f7a;
+}
+
+@media (max-width: 768px) {
+   .card-img-top {
+       height: 200px;
+   }
+}
+</style>
+
+<script>
+$(document).ready(function(){
+   $('#tabletCarousel').carousel({
+       interval: 5000,
+       pause: 'hover'
+   });
+});
+</script>
+<!-- Contact Section -->
+<section id="contact" class="section contact-section">
+    <div class="container">
+        <h2 class="section-title">Hubungi Kami</h2>
+        <p class="text-center mb-5">Kami siap membantu Anda. Silakan hubungi kami melalui form di bawah ini.</p>
+
+        <div class="row">
+            <!-- Contact Info -->
+            <div class="col-lg-4">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <h3>Alamat</h3>
+                        <p>Jl. Aguscik No. 1777<br>
+                        Palembang, Sumatera Selatan 30152</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Email</h3>
+                        <p>info@mnlifesciences.com</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Telepon</h3>
+                        <p>(0711) 8521589</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Jam Operasional</h3>
+                        <p>Senin - Jumat: 08:00 - 17:00<br>
+                        Sabtu: 08:00 - 14:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-lg-8">
+                <div class="contact-form">
+                    <h3 class="mb-4">Kirim Pesan</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nama Lengkap" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subjek" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" placeholder="Pesan" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-3">
+    <div class="container">
+        <p>© 2024 PT M&N Life Sciences | All Rights Reserved</p>
+    </div>
+</footer>
+
+<style>
+/* Contact Section Styles */
+.contact-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.contact-info {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.info-item {
+    margin-bottom: 25px;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-item h3 {
+    color: #1a5f7a;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-control {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #1a5f7a, #86bc25);
+    border: none;
+    padding: 10px 30px;
+    border-radius: 30px;
+}
+</style>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+
+   <script>
+       // Smooth scroll
+       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+           anchor.addEventListener('click', function (e) {
+               e.preventDefault();
+               
+               const target = document.querySelector(this.getAttribute('href'));
+               if(target) {
+                   const headerOffset = 80;
+                   const elementPosition = target.getBoundingClientRect().top;
+                   const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                   window.scrollTo({
+                       top: offsetPosition,
+                       behavior: "smooth"
+                   });
+               }
+           });
+       });
+
+       // Active state handling
+       const navLinks = document.querySelectorAll('.nav-link');
+       const sections = document.querySelectorAll('section[id]');
+
+       function setActiveLink() {
+           let fromTop = window.scrollY + 100;
+
+           sections.forEach(section => {
+               if (
+                   section.offsetTop <= fromTop &&
+                   section.offsetTop + section.offsetHeight > fromTop
+               ) {
+                   const correspondingLink = document.querySelector(`a[href="#${section.id}"]`);
+                   if (correspondingLink) {
+                       navLinks.forEach(link => link.classList.remove('active'));
+                       correspondingLink.classList.add('active');
+                   }
+               }
+           });
+       }
+
+       // Navbar scroll behavior
+       window.addEventListener('scroll', () => {
+           const navbar = document.querySelector('.navbar');
+           if (window.scrollY > 50) {
+               navbar.style.padding = '0.5rem 2rem';
+               navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+           } else {
+               navbar.style.padding = '1rem 2rem';
+               navbar.style.boxShadow = 'none';
+           }
+           setActiveLink();
+       });
+
+       window.addEventListener('load', setActiveLink);
+   </script>
+</body>
+</html>
+
