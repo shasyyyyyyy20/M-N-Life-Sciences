@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - M&N Life Sciences</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00539C;
+            --secondary: #EEA47F;
+            --accent1: #2F3C7E;
+            --accent2: #FBEAEB;
+            --gradient1: linear-gradient(135deg, #2F3C7E, #7279a5);
+            --gradient2: linear-gradient(135deg, #EEA47F, #ffc7af);
+            --box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lora', serif;
+            scroll-behavior: smooth;
+        }
+
+        .header {
+            height: 60vh;
+            background: var(--gradient1),
+                        url('/api/placeholder/1920/1080') center/cover fixed;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-light {
+            background: var(--accent2);
+        }
+
+        .section-dark {
+            background: var(--accent1);
+            color: white;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary);
+            box-shadow: 0 15px 40px rgba(238, 164, 127, 0.2);
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-size: 2.8em;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .section-dark .section-title {
+            color: white;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient2);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        .history-text {
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+            font-size: 1.1em;
+        }
+
+        .vision-container {
+            background: var(--gradient2);
+            padding: 3px;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: var(--box-shadow);
+        }
+
+        .vision-box {
+            background: white;
+            color: var(--primary);
+            padding: 40px;
+            border-radius: 17px;
+            text-align: center;
+            font-size: 1.3em;
+            line-height: 1.6;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .mission-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            display: flex;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(238, 164, 127, 0.2);
+            box-shadow: var(--box-shadow);
+        }
+
+        .mission-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--secondary);
+            background: linear-gradient(135deg, white, var(--accent2));
+        }
+
+        .mission-number {
+            font-size: 3em;
+            color: var(--secondary);
+            margin-right: 20px;
+            font-weight: bold;
+            line-height: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .mission-text {
+            color: #333;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+
+        /* Decorative Elements */
+        .accent-circle {
+            position: absolute;
+            background: var(--gradient2);
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .accent-circle-1 {
+            width: 200px;
+            height: 200px;
+            top: -100px;
+            right: -100px;
+        }
+
+        .accent-circle-2 {
+            width: 150px;
+            height: 150px;
+            bottom: -75px;
+            left: -75px;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .card {
+                padding: 30px;
+            }
+
+            .vision-box {
+                font-size: 1.1em;
+                padding: 30px;
+            }
+
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mission-item {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Content structure sama seperti sebelumnya, dengan penambahan accent circles -->
+    <header class="header">
+        <div class="container">
+            <h1>Tentang Kami</h1>
+            <p style="font-size: 1.2em;">Berinovasi untuk Kesehatan yang Lebih Baik</p>
+        </div>
+    </header>
+
+    <section class="section section-light">
+        <div class="accent-circle accent-circle-1"></div>
+        <div class="container">
+            <h2 class="section-title">Sejarah Kami</h2>
+            <div class="card">
+                <div class="history-text">
+                    <!-- Konten sejarah sama seperti sebelumnya -->
+                    <p>Didasarkan niat dan tekad, Melinda dan Nathasya mendirikan M&N Group dengan visi untuk menciptakan perubahan dalam dunia farmasi. Berbekal latar belakang farmasi dan bisnis, dibangunlah sebuah perusahaan yang tidak hanya besar dalam skala, tetapi juga membawa dampak positif bagi masyarakat luas. M&N Group didirikan dengan tujuan sebagai penyedia bahan baku obat yang berkualitas, menjembatani kebutuhan kesehatan global dengan inovasi dan teknologi.</p>
+                    <br>
+                    <p>Selama tiga dekade, M&N Group terus berkembang menjadi sebuah perusahaan yang berfokus dalam lifescience terlebih dalam segi produksi, telah banyak produk yang diproduksi dengan kategori yang berbeda. Terdapat sediaan steril (seperti sediaan intranasal), antibiotik beta laktam (sirup dan tablet), serta tablet vitamin yang difokuskan untuk anak anak. Keunggulan perusahaan ini bukan hanya pada produk-produknya, tetapi juga pendekatan modern dan prinsip-prinsip keberlanjutan yang diusung.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="accent-circle accent-circle-2"></div>
+        <div class="container">
+            <h2 class="section-title">Visi</h2>
+            <div class="vision-container">
+                <div class="vision-box">
+                    <p>Menjadi pemimpin global dalam industri farmasi, yang menyediakan solusi kesehatan berkualitas tinggi melalui inovasi berkelanjutan, teknologi modern, dan komitmen terhadap kualitas serta keberlanjutan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title">Misi</h2>
+            <div class="mission-grid">
+                <!-- Konten misi sama seperti sebelumnya -->
+                <div class="mission-item">
+                    <div class="mission-number">01</div>
+                    <div class="mission-text">Mengembangkan produk farmasi yang aman dan efektif, dengan bahan baku yang berkelanjutan dan teknologi yang ramah lingkungan.</div>
+                </div>
+                <div class="mission-item">
+                    <div class="mission-number">02</div>
+                    <div class="mission-text">Mengutamakan kualitas tinggi di setiap tahap produksi, sesuai dengan standar internasional.</div>
+                </div>
+                <div class="mission-item">
+                    <div class="mission-number">03</div>
+                    <div class="mission-text">Memberdayakan tenaga kerja berpengalaman dalam riset dan produksi.</div>
+                </div>
+                <div class="mission-item">
+                    <div class="mission-number">04</div>
+                    <div class="mission-text">Mempromosikan praktik "green pharmaceutical manufacturing" untuk meminimalkan dampak lingkungan.</div>
+                </div>
+                <div class="mission-item">
+                    <div class="mission-number">05</div>
+                    <div class="mission-text">Berkontribusi pada edukasi kesehatan masyarakat dengan program-program yang memperkenalkan penggunaan obat yang tepat dan bijaksana.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
